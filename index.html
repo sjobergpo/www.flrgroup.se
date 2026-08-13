@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1A0F1F">
+    <meta name="description" content="FLR Group — A Pony of Many Tricks">
+    <title>FLR Group</title>
+
+    <script>
+        (() => {
+            const colours = ["#1A0F1F", "#3B1E3F", "#0E3A3C", "#221E20", "#141B34"];
+            const previousColour = sessionStorage.getItem("flr-background");
+            const availableColours = colours.filter((colour) => colour !== previousColour);
+            const randomIndex = Math.floor(Math.random() * availableColours.length);
+            const backgroundColour = availableColours[randomIndex];
+
+            document.documentElement.style.setProperty("--background", backgroundColour);
+            document.querySelector('meta[name="theme-color"]').content = backgroundColour;
+            sessionStorage.setItem("flr-background", backgroundColour);
+        })();
+    </script>
+
+    <style>
+        :root {
+            --background: #1A0F1F;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100svh;
+            overflow: hidden;
+            background: var(--background);
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: clamp(2rem, 7vh, 5rem) 1.25rem 0;
+        }
+
+        .logo-window {
+            position: relative;
+            width: min(90vw, 46rem);
+            aspect-ratio: 886 / 256;
+            overflow: hidden;
+        }
+
+        .logo {
+            position: absolute;
+            top: -147.27%;
+            left: -7.22%;
+            display: block;
+            width: 112.87%;
+            height: auto;
+        }
+
+        @media (max-height: 32rem) {
+            .site-header {
+                padding-top: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-window">
+            <img
+                class="logo"
+                src="flrgroup_logo.png"
+                alt="FLR Group — A Pony of Many Tricks"
+                width="1000"
+                height="1000"
+            >
+        </div>
+    </header>
+</body>
+</html>
