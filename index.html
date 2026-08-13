@@ -43,46 +43,30 @@
         }
 
         .site-header {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            place-items: center;
             width: 100%;
-            padding: clamp(2rem, 7vh, 5rem) 1.25rem 0;
-        }
-
-        .logo-window {
-            position: relative;
-            width: min(90vw, 46rem);
-            aspect-ratio: 886 / 256;
-            overflow: hidden;
+            min-height: 100svh;
         }
 
         .logo {
-            position: absolute;
-            top: -147.27%;
-            left: -7.22%;
             display: block;
-            width: 112.87%;
+            width: min(100%, 1000px);
+            max-height: 100svh;
             height: auto;
-        }
-
-        @media (max-height: 32rem) {
-            .site-header {
-                padding-top: 1.25rem;
-            }
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <div class="logo-window">
-            <img
-                class="logo"
-                src="flrgroup_logo.png"
-                alt="FLR Group — A Pony of Many Tricks"
-                width="1000"
-                height="1000"
-            >
-        </div>
+        <img
+            class="logo"
+            src="flrgroup_logo.png"
+            alt="FLR Group — A Pony of Many Tricks"
+            width="1000"
+            height="1000"
+        >
     </header>
 </body>
 </html>
