@@ -49,24 +49,55 @@
             min-height: 100svh;
         }
 
+        .logo-wrap {
+            position: relative;
+            width: min(100%, 1000px, 100svh);
+            container-type: inline-size;
+        }
+
         .logo {
             display: block;
-            width: min(100%, 1000px);
-            max-height: 100svh;
+            width: 100%;
             height: auto;
-            object-fit: contain;
+        }
+
+        .contact {
+            position: absolute;
+            top: 72%;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .contact a {
+            font: 600 clamp(12px, 2.2cqi, 20px)/1.2 system-ui, -apple-system, sans-serif;
+            letter-spacing: 0.08em;
+            color: #EBD3EA;
+            opacity: 0.75;
+            text-decoration: none;
+        }
+
+        .contact a:hover,
+        .contact a:focus-visible {
+            opacity: 1;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <img
-            class="logo"
-            src="flrgroup_logo.png"
-            alt="FLR Group — A Pony of Many Tricks"
-            width="1000"
-            height="1000"
-        >
+        <div class="logo-wrap">
+            <img
+                class="logo"
+                src="flrgroup_logo.png"
+                alt="FLR Group — A Pony of Many Tricks"
+                width="1000"
+                height="1000"
+            >
+            <footer class="contact">
+                <a href="mailto:hello@flrgroup.se">hello@flrgroup.se</a>
+            </footer>
+        </div>
     </header>
 </body>
 </html>
